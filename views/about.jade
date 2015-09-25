@@ -1,17 +1,20 @@
 extends layout
 
-block content
+block content	
 	h1 Workflow of the Assignment
+	h2(style='color:blue') 
+		a(href='http://shippable-51981.onmodulus.net/') Live URL: http://shippable-51981.onmodulus.net/
 	ul
 		li			
-			h6 1) The Client side is defined in the jade within express and the index.jade is linked to the home.
+			h6 1) Used git search API for fetching the no of open issues whithin a given date range
 		li
-			h6 2) Services are written in Node.js, on Submit after entering the repo URL 'getissues' service is called. This will return the necessary response in an array, which is used in the jade file to present dynamically.				  
+			h6 2) Git calls are made asynchronously to fetch the required data in various date ranges				  
 		li
-			h6 3) If a valid repo URL is entered, then git search API for issues (ghsearch.issues) is called by passing the query string 'q', repo URL and created date criterion as arguments. ghsearch.issues returns a JSON object with many attributes, from which 'total_count' gives the total number of opened issues. 
+			h6 3) Used eventEmitter to manage the asynchronous callbacks
 		li
-			h6 4) For date criterion Monent.js is used, a library to play with date formats and manipulation.
+			h6 4) Used jade view engine to render the data from server
 		li
-			h6 5) A new eventEmitter ('calculated') is added in order to ensure that the result is rendered only after the calculation of all needed values.
+			h6 5) Error cases like invalid repository are handled
 		li
-			h6 6) Error handling is done for the incorrect or unavailable repo URL. Whenever there is an incorrect repo passed to git search API, result returned will be undefined. A check is made on that and if it is an erroneous, repo error.jade is rendered else issue.jade is rendered along with an array([total issues, issues in last 24 hours, in a week except current date, before a week = (total issues-issues in the last week)]).
+			h6 6) NOTE: Can also use async library for managing the asynchronous calls. But for the given requirement,
+						eventEmitter was sufficient. Given more time, git API rate limit can be handled.
