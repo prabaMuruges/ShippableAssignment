@@ -1,7 +1,10 @@
+//
+  A basic layout file which the fixed background, header, footer and the search box with repo URL text box.
+  CSS is defined in style.css stylesheet
 !!! 5
 html
   head
-    title= title
+    title=title
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel='stylesheet', href='/stylesheets/chunkfive-fontface.css')
   body
@@ -9,21 +12,12 @@ html
       nav
         ul
           li 
-            a(href="/") Home
-          li 
-            a(href="/about") About
+            a(href="/About") Assignment Doc
           li 
             a(href="/contact") Contact
-    section#wrapper
-      block content
-      footer 
-        section.css-table
-          section.four-column
-            section.cell
-              p Mauris porttitor <br />felis eu leo aliquet<br /> ac rutrum odio aliquet
-            section.cell
-              p Mauris porttitor <br />felis eu leo aliquet<br /> ac rutrum odio aliquet
-            section.cell
-              p Mauris porttitor <br />felis eu leo aliquet<br /> ac rutrum odio aliquet
-            section.cell
-              p Mauris porttitor <br />felis eu leo aliquet<br /> ac rutrum odio aliquet
+    br
+    form(action='/getissues')
+      input(type='text', id='repo', name='repo', size=15)
+      input(type='submit', value='Get Issues')
+    br
+    block content

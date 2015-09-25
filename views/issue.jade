@@ -1,0 +1,19 @@
+//
+  Prints the table content dynamically based on the content
+extends layout
+
+block content
+  table(class='css-table')
+    tbody(id='issues')
+        tr
+          td='Total : '
+          td=datas[0]
+        tr
+          td='Within 24 hours : '
+          td=datas[1]
+        tr
+          td='In last week except today : '
+          td=datas[2]
+        tr
+          td='Before a Week : '
+          td=datas[3]

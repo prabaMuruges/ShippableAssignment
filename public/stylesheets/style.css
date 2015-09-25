@@ -133,6 +133,7 @@ h6 {
   font-size: 1.2em;
   line-height: 1.5em;
   margin-bottom: 1.5em;
+  color: #fff;
 }
 p,
 q,
@@ -176,6 +177,10 @@ acronym {
 -----------------------------------------------------------------------------*/
 .css-table {
   width: 100%;
+  color: #fff;
+  border-collapse: collapse;
+  border: 1px solid #fff;
+  font-size: initial;
   display: table;
 }
 .css-table .two-column {
@@ -209,7 +214,7 @@ acronym {
 /* Header
 -----------------------------------------------------------------------------*/
 header {
-  background: #f00060;
+  background: #66f;
 }
 header nav {
   width: 960px;
